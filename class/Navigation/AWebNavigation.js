@@ -1,51 +1,67 @@
-import { ANavigation } from 'ts-react-app-infrastructure';
-import { strHp } from '../../helper';
-export class AWebNavigation extends ANavigation {
-    push(route) {
+"use strict";
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var ts_react_app_infrastructure_1 = require('ts-react-app-infrastructure');
+var helper_1 = require('../../helper');
+var AWebNavigation = (function (_super) {
+    __extends(AWebNavigation, _super);
+    function AWebNavigation() {
+        _super.apply(this, arguments);
+    }
+    AWebNavigation.prototype.push = function (route) {
         this.navigator.push(route);
-    }
-    replace(route) {
+    };
+    AWebNavigation.prototype.replace = function (route) {
         this.navigator.replace(route);
-    }
-    resetTo(route) {
+    };
+    AWebNavigation.prototype.resetTo = function (route) {
         this.replace(route);
-    }
-    jumpTo(route) {
+    };
+    AWebNavigation.prototype.jumpTo = function (route) {
         this.push(route);
-    }
-    pop() {
+    };
+    AWebNavigation.prototype.pop = function () {
         this.back();
-    }
-    back() {
+    };
+    AWebNavigation.prototype.back = function () {
         this.navigator.goBack();
-    }
-    forward() {
+    };
+    AWebNavigation.prototype.forward = function () {
         this.navigator.goForward();
-    }
-    toEntry(isReset = true) {
+    };
+    AWebNavigation.prototype.toEntry = function (isReset) {
+        if (isReset === void 0) { isReset = true; }
         if (isReset)
             this.resetTo(this.entryScene);
         else
             this.jumpTo(this.entryScene);
-    }
-    toLogin(isReset = true) {
+    };
+    AWebNavigation.prototype.toLogin = function (isReset) {
+        if (isReset === void 0) { isReset = true; }
         if (isReset)
             this.resetTo(this.loginScene);
         else
             this.jumpTo(this.loginScene);
-    }
-    reload(forcedReload = false) {
+    };
+    AWebNavigation.prototype.reload = function (forcedReload) {
+        if (forcedReload === void 0) { forcedReload = false; }
         window.location.reload(forcedReload);
-    }
-    isEntry() {
-        const nowUrl = strHp.trim(window.location.hash.toLowerCase());
-        const s = ('#' + this.entryScene).toLowerCase();
+    };
+    AWebNavigation.prototype.isEntry = function () {
+        var nowUrl = helper_1.strHp.trim(window.location.hash.toLowerCase());
+        var s = ('#' + this.entryScene).toLowerCase();
         if (nowUrl != '' && nowUrl != '#/' && nowUrl != '#' && nowUrl.indexOf(s) == -1) {
             return false;
         }
         return true;
-    }
-    openUrl(url, target = '_top') {
+    };
+    AWebNavigation.prototype.openUrl = function (url, target) {
+        if (target === void 0) { target = '_top'; }
         return window.open(url, target);
-    }
-}
+    };
+    return AWebNavigation;
+}(ts_react_app_infrastructure_1.ANavigation));
+exports.AWebNavigation = AWebNavigation;

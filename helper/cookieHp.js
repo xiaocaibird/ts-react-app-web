@@ -1,24 +1,25 @@
-export var cookieHp;
+"use strict";
+var cookieHp;
 (function (cookieHp) {
-    cookieHp.setValue = (name, value, Days, isForever) => {
+    cookieHp.setValue = function (name, value, Days, isForever) {
         if (isForever)
             Days = 300000;
-        let exp = null;
+        var exp = null;
         if (Days) {
             exp = new Date();
             exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
         }
         document.cookie = name + "=" + encodeURIComponent(value) + (exp == null ? "" : (";expires=" + exp.toUTCString()));
     };
-    cookieHp.getValue = (name) => {
-        const reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
-        const arr = document.cookie.match(reg);
+    cookieHp.getValue = function (name) {
+        var reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+        var arr = document.cookie.match(reg);
         if (arr)
             return decodeURIComponent(arr[2]);
         else
             return null;
     };
-    cookieHp.removeValue = (name) => {
+    cookieHp.removeValue = function (name) {
         cookieHp.setValue(name, '', -1000);
     };
-})(cookieHp || (cookieHp = {}));
+})(cookieHp = exports.cookieHp || (exports.cookieHp = {}));

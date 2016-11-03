@@ -17,5 +17,8 @@ export abstract class AWebApp<TInitData, TAppConfig> extends AApp<TInitData, TAp
     }
 
     //非继承成员
+    abstract getImageFullPath(imgName: string): string;
+
     protected versionInfoCookieKey = '_my__app_cookieVersion';
+
 }
