@@ -1,23 +1,19 @@
 {
     "compilerOptions": {
         //基本配置
-        "module": "commonjs",
+        "module": "es6",
         "jsx": "react",
         "moduleResolution": "node",
         "allowJs": true,
         "experimentalDecorators": true, //es7 特性标签  
         "lib": [
             "dom",
-            "es6",
+            "es7",
             "scripthost"
         ],
-        //输出配置
-        "target": "es5",
-        "pretty": true,
-        "noEmitOnError": true,
-        "inlineSources": false,
         //错误检查
         /*"allowSyntheticDefaultImports": true,*/
+        /*"preserveConstEnums":true,*/
         "noImplicitAny": true,
         "noImplicitThis": true,
         "strictNullChecks": true,
@@ -25,9 +21,14 @@
         "noImplicitReturns": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        /*"preserveConstEnums":true,*/
-        //tsc
+        "alwaysStrict": true,
+        //输出配置
+        "target": "es5",
+        "pretty": true,
+        "noEmitOnError": true,
+        "importHelpers": true,
         "removeComments": true,
+        "inlineSources": false,
         "sourceMap": false
     },
     "exclude": [
