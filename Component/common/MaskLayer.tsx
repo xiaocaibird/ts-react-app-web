@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { baseWebComponent } from '../base';
+import { AWebComponent } from '../base';
 import { objHp } from '../../helper';
 
 type props = {
@@ -8,7 +8,7 @@ type props = {
 }
 type state = tCommon.reactState;
 
-export class MaskLayer extends baseWebComponent<props, state> {
+export class MaskLayer extends AWebComponent<props, state> {
     render() {
         return (
             <div style={objHp.assignNewObj(styles.opacityBg, this.props.style)} onClick={this.props.onClick}>

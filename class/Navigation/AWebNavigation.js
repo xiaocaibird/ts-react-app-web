@@ -1,15 +1,10 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var ts_react_app_infrastructure_1 = require('ts-react-app-infrastructure');
-var helper_1 = require('../../helper');
+var tslib_1 = require("tslib");
+var ts_react_app_infrastructure_1 = require("ts-react-app-infrastructure");
 var AWebNavigation = (function (_super) {
-    __extends(AWebNavigation, _super);
+    tslib_1.__extends(AWebNavigation, _super);
     function AWebNavigation() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     AWebNavigation.prototype.push = function (route) {
         this.navigator.push(route);
@@ -51,7 +46,7 @@ var AWebNavigation = (function (_super) {
         window.location.reload(forcedReload);
     };
     AWebNavigation.prototype.isEntry = function () {
-        var nowUrl = helper_1.strHp.trim(window.location.hash.toLowerCase());
+        var nowUrl = window.location.hash.toLowerCase().trim();
         var s = ('#' + this.entryScene).toLowerCase();
         if (nowUrl != '' && nowUrl != '#/' && nowUrl != '#' && nowUrl.indexOf(s) == -1) {
             return false;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { baseWebComponent } from '../base';
+import { AWebComponent } from '../base';
 import { Centering, MaskLayer } from './';
 import { objHp } from '../../helper';
 
@@ -11,7 +11,7 @@ type state = {
     show?: boolean
 };
 
-export class EnlargeElement extends baseWebComponent<props, state> {
+export class EnlargeElement extends AWebComponent<props, state> {
     constructor(props: props) {
         super();
         this.state = {

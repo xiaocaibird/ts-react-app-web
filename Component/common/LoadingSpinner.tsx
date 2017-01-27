@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { baseWebComponent } from '../base';
+import { AWebComponent } from '../base';
 import { Centering, MaskLayer } from './';
 import { objHp } from '../../helper';
 
@@ -10,7 +10,7 @@ type props = {
 };
 type state = tCommon.reactState;
 
-export class LoadingSpinner extends baseWebComponent<props, state> {
+export class LoadingSpinner extends AWebComponent<props, state> {
     render() {
         const {show = false, imgSrc, imgStyle} = this.props;
         const hide = show ? null : styles.hide;

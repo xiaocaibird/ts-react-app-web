@@ -1,19 +1,18 @@
 import { ANavigation } from 'ts-react-app-infrastructure';
-import { strHp } from '../../helper';
 
-export abstract class AWebNavigation extends ANavigation<ReactRouter.History, string>  {
-    push(route: HistoryModule.LocationDescriptor) {
+export abstract class AWebNavigation extends ANavigation<ReactRouter.HistoryBase, string>  {
+    push(route: ReactRouter.LocationDescriptor) {
         this.navigator.push(route);
     }
 
-    replace(route: HistoryModule.LocationDescriptor) {
+    replace(route: ReactRouter.LocationDescriptor) {
         this.navigator.replace(route);
     }
 
-    resetTo(route: HistoryModule.LocationDescriptor) {
+    resetTo(route: ReactRouter.LocationDescriptor) {
         this.replace(route);
     }
-    jumpTo(route: HistoryModule.LocationDescriptor) {
+    jumpTo(route: ReactRouter.LocationDescriptor) {
         this.push(route);
     }
     pop() {
@@ -45,7 +44,7 @@ export abstract class AWebNavigation extends ANavigation<ReactRouter.History, st
     }
 
     isEntry() {
-        const nowUrl = strHp.trim(window.location.hash.toLowerCase());
+        const nowUrl = window.location.hash.toLowerCase().trim();
         const s = ('#' + this.entryScene).toLowerCase();
 
         if (nowUrl != '' && nowUrl != '#/' && nowUrl != '#' && nowUrl.indexOf(s) == -1) {

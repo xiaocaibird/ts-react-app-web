@@ -1,5 +1,5 @@
 "use strict";
-var ts_react_app_infrastructure_1 = require('ts-react-app-infrastructure');
+var ts_react_app_infrastructure_1 = require("ts-react-app-infrastructure");
 var _WebFactory = (function () {
     function _WebFactory() {
     }

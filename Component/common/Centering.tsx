@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { baseWebComponent } from '../base';
+import { AWebComponent } from '../base';
 
 type props = tCommon.reactProps;
 type state = tCommon.reactState;
 
-export class Centering extends baseWebComponent<props, state> {
+export class Centering extends AWebComponent<props, state> {
     render() {
         return <table style={styles.table}>
             <tr>

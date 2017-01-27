@@ -1,22 +1,18 @@
 "use strict";
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var React = require('react');
-var base_1 = require('../base');
-var helper_1 = require('../../helper');
+var tslib_1 = require("tslib");
+var React = require("react");
+var base_1 = require("../base");
+var helper_1 = require("../../helper");
 var MaskLayer = (function (_super) {
-    __extends(MaskLayer, _super);
+    tslib_1.__extends(MaskLayer, _super);
     function MaskLayer() {
-        _super.apply(this, arguments);
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     MaskLayer.prototype.render = function () {
-        return (React.createElement("div", {style: helper_1.objHp.assignNewObj(styles.opacityBg, this.props.style), onClick: this.props.onClick}));
+        return (React.createElement("div", { style: helper_1.objHp.assignNewObj(styles.opacityBg, this.props.style), onClick: this.props.onClick }));
     };
     return MaskLayer;
-}(base_1.baseWebComponent));
+}(base_1.AWebComponent));
 exports.MaskLayer = MaskLayer;
 var styles = {
     opacityBg: {

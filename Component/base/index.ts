@@ -1,2 +1,2 @@
-export * from './baseWebComponent';
-export * from './baseWebSceneComponent';
+export * from './AWebComponent';
+export * from './AWebSceneComponent';
