@@ -7,11 +7,13 @@ type state = tCommon.reactState;
 export class Centering extends AWebComponent<props, state> {
     render() {
         return <table style={styles.table}>
-            <tr>
-                <td style={styles.td}>
-                    {this.props.children}
-                </td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td style={styles.td}>
+                        {this.props.children}
+                    </td>
+                </tr>
+            </tbody>
         </table>
 
     }

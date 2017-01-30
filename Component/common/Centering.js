@@ -9,8 +9,9 @@ var Centering = (function (_super) {
     }
     Centering.prototype.render = function () {
         return React.createElement("table", { style: styles.table },
-            React.createElement("tr", null,
-                React.createElement("td", { style: styles.td }, this.props.children)));
+            React.createElement("tbody", null,
+                React.createElement("tr", null,
+                    React.createElement("td", { style: styles.td }, this.props.children))));
     };
     return Centering;
 }(base_1.AWebComponent));
