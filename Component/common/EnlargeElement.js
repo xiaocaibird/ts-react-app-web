@@ -24,11 +24,11 @@ var EnlargeElement = (function (_super) {
         });
     };
     EnlargeElement.prototype.render = function () {
-        var _a = this.props.clickMaskLayerToHide, clickMaskLayerToHide = _a === void 0 ? true : _a;
+        var _a = this.props.clickToHide, clickToHide = _a === void 0 ? true : _a;
         var _b = this.state.show, show = _b === void 0 ? false : _b;
         var hide = show ? null : styles.hide;
         return React.createElement("div", { style: helper_1.objHp.assignNewObj(styles.div, hide) },
-            React.createElement(_1.MaskLayer, { onClick: clickMaskLayerToHide ? this.hide : undefined }),
+            React.createElement(_1.MaskLayer, { onClick: clickToHide ? this.hide : undefined }),
             React.createElement(_1.Centering, null, this.props.children));
     };
     return EnlargeElement;
