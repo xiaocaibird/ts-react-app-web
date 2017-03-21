@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var React = require("react");
 var base_1 = require("../base");
@@ -7,7 +8,7 @@ var helper_1 = require("../../helper");
 var EnlargeElement = (function (_super) {
     tslib_1.__extends(EnlargeElement, _super);
     function EnlargeElement(props) {
-        var _this = _super.call(this) || this;
+        var _this = _super.call(this, props) || this;
         _this.state = {
             show: props.show
         };
@@ -27,9 +28,12 @@ var EnlargeElement = (function (_super) {
         var _a = this.props.clickToHide, clickToHide = _a === void 0 ? true : _a;
         var _b = this.state.show, show = _b === void 0 ? false : _b;
         var hide = show ? null : styles.hide;
-        return React.createElement("div", { style: helper_1.objHp.assignNewObj(styles.div, hide) },
-            React.createElement(_1.MaskLayer, { onClick: clickToHide ? this.hide : undefined }),
-            React.createElement(_1.Centering, null, this.props.children));
+        return <div style={helper_1.objHp.assignNewObj(styles.div, hide)}>
+            <_1.MaskLayer onClick={clickToHide ? this.hide : undefined}/>
+            <_1.Centering>
+                {this.props.children}
+            </_1.Centering>
+        </div>;
     };
     return EnlargeElement;
 }(base_1.AWebComponent));

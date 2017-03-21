@@ -1,19 +1,27 @@
 import { ANavigation } from 'ts-react-app-infrastructure';
 
-export abstract class AWebNavigation extends ANavigation<ReactRouter.HistoryBase, string>  {
-    push(route: ReactRouter.LocationDescriptor) {
-        this.navigator.push(route);
+export abstract class AWebNavigation extends ANavigation<RouterHistory.History, string>  {
+    push(route: RouterHistory.LocationDescriptor, state?: any) {
+        if (typeof route === 'object')
+            this.navigator.push(route)
+        else {
+            this.navigator.push(route, state)
+        }
     }
 
-    replace(route: ReactRouter.LocationDescriptor) {
-        this.navigator.replace(route);
+    replace(route: RouterHistory.LocationDescriptor, state?: any) {
+        if (typeof route === 'object')
+            this.navigator.push(route)
+        else {
+            this.navigator.push(route, state)
+        }
     }
 
-    resetTo(route: ReactRouter.LocationDescriptor) {
-        this.replace(route);
+    resetTo(route: RouterHistory.LocationDescriptor, state?: any) {
+        this.replace(route, state);
     }
-    jumpTo(route: ReactRouter.LocationDescriptor) {
-        this.push(route);
+    jumpTo(route: RouterHistory.LocationDescriptor, state?: any) {
+        this.push(route, state);
     }
     pop() {
         this.back();

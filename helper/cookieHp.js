@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var cookieHp;
 (function (cookieHp) {
     cookieHp.setValue = function (name, value, Days, isForever) {

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var React = require("react");
 var base_1 = require("../base");
@@ -9,7 +10,9 @@ var MaskLayer = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     MaskLayer.prototype.render = function () {
-        return (React.createElement("div", { style: helper_1.objHp.assignNewObj(styles.opacityBg, this.props.style), onClick: this.props.onClick }));
+        return (<div style={helper_1.objHp.assignNewObj(styles.opacityBg, this.props.style)} onClick={this.props.onClick}>
+
+            </div>);
     };
     return MaskLayer;
 }(base_1.AWebComponent));

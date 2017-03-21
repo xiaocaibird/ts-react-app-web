@@ -13,7 +13,7 @@ type state = {
 
 export class EnlargeElement extends AWebComponent<props, state> {
     constructor(props: props) {
-        super();
+        super(props);
         this.state = {
             show: props.show
         }

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var React = require("react");
 var base_1 = require("../base");
@@ -12,10 +13,12 @@ var LoadingSpinner = (function (_super) {
     LoadingSpinner.prototype.render = function () {
         var _a = this.props, _b = _a.show, show = _b === void 0 ? false : _b, imgSrc = _a.imgSrc, imgStyle = _a.imgStyle;
         var hide = show ? null : styles.hide;
-        return React.createElement("div", { style: helper_1.objHp.assignNewObj(styles.div, hide) },
-            React.createElement(_1.MaskLayer, null),
-            React.createElement(_1.Centering, null,
-                React.createElement("img", { src: imgSrc, style: imgStyle })));
+        return <div style={helper_1.objHp.assignNewObj(styles.div, hide)}>
+            <_1.MaskLayer />
+            <_1.Centering>
+                <img src={imgSrc} style={imgStyle}/>
+            </_1.Centering>
+        </div>;
     };
     return LoadingSpinner;
 }(base_1.AWebComponent));

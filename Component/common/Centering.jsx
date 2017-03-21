@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var React = require("react");
 var base_1 = require("../base");
@@ -8,10 +9,15 @@ var Centering = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Centering.prototype.render = function () {
-        return React.createElement("table", { style: styles.table },
-            React.createElement("tbody", null,
-                React.createElement("tr", null,
-                    React.createElement("td", { style: styles.td }, this.props.children))));
+        return <table style={styles.table}>
+            <tbody>
+                <tr>
+                    <td style={styles.td}>
+                        {this.props.children}
+                    </td>
+                </tr>
+            </tbody>
+        </table>;
     };
     return Centering;
 }(base_1.AWebComponent));

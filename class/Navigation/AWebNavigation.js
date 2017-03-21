@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var ts_react_app_infrastructure_1 = require("ts-react-app-infrastructure");
 var AWebNavigation = (function (_super) {
@@ -6,17 +7,25 @@ var AWebNavigation = (function (_super) {
     function AWebNavigation() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    AWebNavigation.prototype.push = function (route) {
-        this.navigator.push(route);
+    AWebNavigation.prototype.push = function (route, state) {
+        if (typeof route === 'object')
+            this.navigator.push(route);
+        else {
+            this.navigator.push(route, state);
+        }
     };
-    AWebNavigation.prototype.replace = function (route) {
-        this.navigator.replace(route);
+    AWebNavigation.prototype.replace = function (route, state) {
+        if (typeof route === 'object')
+            this.navigator.push(route);
+        else {
+            this.navigator.push(route, state);
+        }
     };
-    AWebNavigation.prototype.resetTo = function (route) {
-        this.replace(route);
+    AWebNavigation.prototype.resetTo = function (route, state) {
+        this.replace(route, state);
     };
-    AWebNavigation.prototype.jumpTo = function (route) {
-        this.push(route);
+    AWebNavigation.prototype.jumpTo = function (route, state) {
+        this.push(route, state);
     };
     AWebNavigation.prototype.pop = function () {
         this.back();

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var ts_react_app_infrastructure_1 = require("ts-react-app-infrastructure");
 var _WebFactory = (function () {
     function _WebFactory() {
