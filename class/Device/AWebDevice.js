@@ -172,14 +172,14 @@ var AWebDevice = (function (_super) {
     AWebDevice.prototype.getWindowWidth = function (type) {
         if (type === void 0) { type = 'client'; }
         if (type == 'client')
-            return document.body.clientWidth;
-        return document.body.offsetWidth;
+            return document.documentElement.clientWidth;
+        return document.documentElement.offsetWidth;
     };
     AWebDevice.prototype.getWindowHeight = function (type) {
         if (type === void 0) { type = 'client'; }
         if (type == 'client')
-            return document.body.clientHeight;
-        return document.body.offsetHeight;
+            return document.documentElement.clientHeight;
+        return document.documentElement.offsetHeight;
     };
     AWebDevice.prototype.getScreenWidth = function (type) {
         if (type === void 0) { type = 'avail'; }

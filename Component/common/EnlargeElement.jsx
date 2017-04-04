@@ -9,28 +9,28 @@ var EnlargeElement = (function (_super) {
     tslib_1.__extends(EnlargeElement, _super);
     function EnlargeElement(props) {
         var _this = _super.call(this, props) || this;
+        _this.show = function () {
+            _this.setState({
+                show: true
+            });
+        };
+        _this.hide = function () {
+            _this.setState({
+                show: false
+            });
+        };
         _this.state = {
-            show: props.show
+            show: false
         };
         return _this;
     }
-    EnlargeElement.prototype.componentWillReceiveProps = function (nextProps) {
-        this.setState({
-            show: nextProps.show
-        });
-    };
-    EnlargeElement.prototype.hide = function () {
-        this.setState({
-            show: false
-        });
-    };
     EnlargeElement.prototype.render = function () {
         var _a = this.props.clickToHide, clickToHide = _a === void 0 ? true : _a;
         var _b = this.state.show, show = _b === void 0 ? false : _b;
         var hide = show ? null : styles.hide;
         return <div style={helper_1.objHp.assignNewObj(styles.div, hide)}>
             <_1.MaskLayer onClick={clickToHide ? this.hide : undefined}/>
-            <_1.Centering>
+            <_1.Centering onClick={clickToHide ? this.hide : undefined}>
                 {this.props.children}
             </_1.Centering>
         </div>;

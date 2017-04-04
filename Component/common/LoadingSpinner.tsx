@@ -4,20 +4,22 @@ import { Centering, MaskLayer } from './';
 import { objHp } from '../../helper';
 
 type props = {
-    show: boolean,
-    imgSrc: string,
-    imgStyle?: React.CSSProperties
+    show?: boolean,
+    imgSrc?: string,
+    style?: React.CSSProperties,
 };
 type state = tCommon.reactState;
 
 export class LoadingSpinner extends AWebComponent<props, state> {
     render() {
-        const {show = false, imgSrc, imgStyle} = this.props;
+        const { show = false, imgSrc, style, children } = this.props;
         const hide = show ? null : styles.hide;
         return <div style={objHp.assignNewObj(styles.div, hide)}>
             <MaskLayer />
             <Centering >
-                <img src={imgSrc} style={imgStyle} />
+                {children ? children :
+                    <img src={imgSrc} style={style} />
+                }
             </Centering>
         </div>
 

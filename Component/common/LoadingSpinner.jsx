@@ -11,12 +11,13 @@ var LoadingSpinner = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     LoadingSpinner.prototype.render = function () {
-        var _a = this.props, _b = _a.show, show = _b === void 0 ? false : _b, imgSrc = _a.imgSrc, imgStyle = _a.imgStyle;
+        var _a = this.props, _b = _a.show, show = _b === void 0 ? false : _b, imgSrc = _a.imgSrc, style = _a.style, children = _a.children;
         var hide = show ? null : styles.hide;
         return <div style={helper_1.objHp.assignNewObj(styles.div, hide)}>
             <_1.MaskLayer />
             <_1.Centering>
-                <img src={imgSrc} style={imgStyle}/>
+                {children ? children :
+            <img src={imgSrc} style={style}/>}
             </_1.Centering>
         </div>;
     };

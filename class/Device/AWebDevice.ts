@@ -103,15 +103,15 @@ export abstract class AWebDevice extends ADevice {
 
     getWindowWidth(type: 'client' | 'offset' = 'client') {
         if (type == 'client')
-            return document.body.clientWidth;
+            return document.documentElement.clientWidth;
 
-        return document.body.offsetWidth;
+        return document.documentElement.offsetWidth;
     }
     getWindowHeight(type: 'client' | 'offset' = 'client') {
         if (type == 'client')
-            return document.body.clientHeight;
+            return document.documentElement.clientHeight;
 
-        return document.body.offsetHeight;
+        return document.documentElement.offsetHeight;
     }
 
     getScreenWidth(type: 'avail' = 'avail') {

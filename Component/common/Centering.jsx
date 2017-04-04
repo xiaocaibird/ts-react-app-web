@@ -9,7 +9,7 @@ var Centering = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Centering.prototype.render = function () {
-        return <table style={styles.table}>
+        return <table style={styles.table} onClick={this.props.onClick}>
             <tbody>
                 <tr>
                     <td style={styles.td}>

@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { AWebComponent } from '../base';
 
-type props = tCommon.reactProps;
+type props = {
+    onClick?: tCommon.anyFun
+};
 type state = tCommon.reactState;
 
 export class Centering extends AWebComponent<props, state> {
     render() {
-        return <table style={styles.table}>
+        return <table style={styles.table} onClick={this.props.onClick}>
             <tbody>
                 <tr>
                     <td style={styles.td}>

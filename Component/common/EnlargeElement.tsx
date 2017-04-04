@@ -4,7 +4,6 @@ import { Centering, MaskLayer } from './';
 import { objHp } from '../../helper';
 
 type props = {
-    show: boolean,
     clickToHide?: boolean
 };
 type state = {
@@ -15,17 +14,17 @@ export class EnlargeElement extends AWebComponent<props, state> {
     constructor(props: props) {
         super(props);
         this.state = {
-            show: props.show
+            show: false
         }
     }
-    componentWillReceiveProps(nextProps: props) {
+    show = () => {
         this.setState(
             {
-                show: nextProps.show
+                show: true
             }
         )
     }
-    hide() {
+    hide = () => {
         this.setState(
             {
                 show: false
@@ -33,12 +32,12 @@ export class EnlargeElement extends AWebComponent<props, state> {
         )
     }
     render() {
-        const {clickToHide = true} = this.props;
-        const {show = false} = this.state;
+        const { clickToHide = true } = this.props;
+        const { show = false } = this.state;
         const hide = show ? null : styles.hide;
         return <div style={objHp.assignNewObj(styles.div, hide)}>
             <MaskLayer onClick={clickToHide ? this.hide : undefined} />
-            <Centering >
+            <Centering onClick={clickToHide ? this.hide : undefined}>
                 {this.props.children}
             </Centering>
         </div>
