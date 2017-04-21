@@ -1,6 +1,6 @@
 {
   "name": "ts-react-app-web",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "build ReactWebApp by Typescript",
   "main": "index",
   "scripts": {
@@ -24,10 +24,11 @@
   "homepage": "https://github.com/xiaocaibird/ts-react-app-web#readme",
   "dependencies": {
     "@types/history": "^4.5.0",
-    "@types/react-dom": "^0.14.23",
-    "react-dom": "^15.4.2",
-    "react-router-dom": "^4.0.0",
-    "ts-react-app-infrastructure": "^1.4.3"
+    "@types/react-dom": "^15.5.0",
+    "@types/react-router-dom": "^4.0.4",
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1",
+    "ts-react-app-infrastructure": "^1.4.5"
   },
   "files": [
     "class",
