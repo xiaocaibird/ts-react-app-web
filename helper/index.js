@@ -5,3 +5,4 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("ts-react-app-infrastructure/helper"));
 __export(require("./cookieHp"));
+__export(require("./appHp"));
