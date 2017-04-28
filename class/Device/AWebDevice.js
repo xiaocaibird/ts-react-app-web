@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var ts_react_app_infrastructure_1 = require("ts-react-app-infrastructure");
-var Factory_1 = require("../Factory");
 var AWebDevice = (function (_super) {
     tslib_1.__extends(AWebDevice, _super);
     function AWebDevice() {
@@ -25,7 +24,7 @@ var AWebDevice = (function (_super) {
                         break;
                     }
                 }
-                if (this._systemName == 'iPhone') {
+                if (this._systemName === 'iPhone') {
                     this._systemName = 'iOS';
                 }
             }
@@ -36,14 +35,14 @@ var AWebDevice = (function (_super) {
     });
     Object.defineProperty(AWebDevice.prototype, "AppVersion", {
         get: function () {
-            return Factory_1.WebFactory.App.AppConfig.locatoinVersion.code;
+            return '';
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(AWebDevice.prototype, "ReadableVersion", {
         get: function () {
-            return Factory_1.WebFactory.App.AppConfig.locatoinVersion.readableCode;
+            return '';
         },
         enumerable: true,
         configurable: true
@@ -142,7 +141,7 @@ var AWebDevice = (function (_super) {
     Object.defineProperty(AWebDevice.prototype, "IsIOS", {
         get: function () {
             if (this._isIOS == null) {
-                this._isIOS = this.SystemName.toLowerCase() == 'ios' ? true : false;
+                this._isIOS = this.SystemName.toLowerCase() === 'ios' ? true : false;
             }
             return this._isIOS;
         },
@@ -152,7 +151,7 @@ var AWebDevice = (function (_super) {
     Object.defineProperty(AWebDevice.prototype, "IsAndroid", {
         get: function () {
             if (this._isAndroid == null) {
-                this._isAndroid = this.SystemName.toLowerCase() == 'android' ? true : false;
+                this._isAndroid = this.SystemName.toLowerCase() === 'android' ? true : false;
             }
             return this._isAndroid;
         },
@@ -162,35 +161,47 @@ var AWebDevice = (function (_super) {
     Object.defineProperty(AWebDevice.prototype, "IsPC", {
         get: function () {
             if (this._isPC == null) {
-                this._isPC = this.SystemName.toLowerCase() == 'pc' ? true : false;
+                this._isPC = this.SystemName.toLowerCase() === 'pc' ? true : false;
             }
             return this._isPC;
         },
         enumerable: true,
         configurable: true
     });
-    AWebDevice.prototype.getWindowWidth = function (type) {
+    AWebDevice.prototype.getDocumentWidth = function (type) {
         if (type === void 0) { type = 'client'; }
-        if (type == 'client')
+        if (type === 'client')
             return document.documentElement.clientWidth;
         return document.documentElement.offsetWidth;
     };
-    AWebDevice.prototype.getWindowHeight = function (type) {
+    AWebDevice.prototype.getDocumentHeight = function (type) {
         if (type === void 0) { type = 'client'; }
-        if (type == 'client')
+        if (type === 'client')
             return document.documentElement.clientHeight;
         return document.documentElement.offsetHeight;
     };
+    AWebDevice.prototype.getWindowWidth = function (type) {
+        if (type === void 0) { type = 'outer'; }
+        if (type === 'outer')
+            return window.outerWidth;
+        return window.innerWidth;
+    };
+    AWebDevice.prototype.getWindowHeight = function (type) {
+        if (type === void 0) { type = 'outer'; }
+        if (type === 'outer')
+            return window.outerHeight;
+        return window.innerHeight;
+    };
     AWebDevice.prototype.getScreenWidth = function (type) {
         if (type === void 0) { type = 'avail'; }
-        if (type == 'avail') {
+        if (type === 'avail') {
             return window.screen.availWidth;
         }
         return window.screen.width;
     };
     AWebDevice.prototype.getScreenHeight = function (type) {
         if (type === void 0) { type = 'avail'; }
-        if (type == 'avail') {
+        if (type === 'avail') {
             return window.screen.availHeight;
         }
         return window.screen.height;
