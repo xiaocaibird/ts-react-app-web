@@ -1,6 +1,6 @@
 {
   "name": "ts-react-app-web",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "build ReactWebApp by Typescript",
   "main": "index",
   "scripts": {
