@@ -1,5 +1,6 @@
 declare const process: {
     env: {
-        NODE_ENV: string
+        NODE_ENV: string,
+        version: string
     }
 }
